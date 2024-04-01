@@ -9,7 +9,6 @@ class AdminController extends Controller
 {
     public function sv(Request $req)
     {
-        return view('up');
         $user = Session::get('user');
         if (Session::has('user')) {
             if ($user->roles == 'admin') {
@@ -51,6 +50,21 @@ class AdminController extends Controller
         'created_at' => now(),
     ]);
     return redirect()->route('d');
+}
+public function userdeletev(Request $req)
+{
+    $user = Session::get('user');
+    if (Session::has('user')) {
+        if ($user->roles == 'admin') {
+            return view('admin.deleteuser');
+        }
+        else{
+            return redirect()->back();
+        }
+    }
+    else{
+        return redirect()->back();
+    }
 }
 
 }

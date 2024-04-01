@@ -23,3 +23,4 @@ Route::get('/dashboard', [DashController::class, 'dashboard'])->name('d');
 Route::get('/logout', [loginController::class, 'logout'])->name('logout');
 Route::get('/profile', [loginController::class, 'profile'])->name('profile');
 Route::post('/profile/chnge', [loginController::class, 'changeprofile'])->name('pro');
+Route::get('/deleteuser', [AdminController::class, 'userdeletev'])->name('deleteuser');

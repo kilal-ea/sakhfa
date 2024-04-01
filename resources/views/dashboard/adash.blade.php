@@ -2,6 +2,7 @@
 
 @section('content')
     <div class="">
+    <a  href="{{ route('deleteuser') }}">deletuser</a>
         <a>acceptClient</a>
         <a>showclint</a>
         <a>showproduct</a>
@@ -13,5 +14,8 @@
         <a>showusers</a>
         <a>showbonv</a>
         <a>showsbontra</a>
+    </div>
+    <div>
+    @yield('admin')
     </div>
 @endsection
