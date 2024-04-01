@@ -12,7 +12,7 @@ class AdminController extends Controller
         $user = Session::get('user');
         if (Session::has('user')) {
             if ($user->roles == 'admin') {
-                return view('up');
+                return view('admin.adduser');
             }
             else{
                 return redirect()->back();
@@ -49,14 +49,15 @@ class AdminController extends Controller
         'remember_token'=>$tocken,
         'created_at' => now(),
     ]);
-    return redirect()->route('d');
+    return redirect()->back();
 }
 public function userdeletev(Request $req)
 {
     $user = Session::get('user');
     if (Session::has('user')) {
         if ($user->roles == 'admin') {
-            return view('admin.deleteuser');
+            $users = DB::table('users')->get();
+            return view('admin.deleteuser',['users'=>$users]);
         }
         else{
             return redirect()->back();
@@ -66,5 +67,25 @@ public function userdeletev(Request $req)
         return redirect()->back();
     }
 }
+public function destroy(Request $request)
+{
+    $user = Session::get('user');
+    if (Session::has('user')) {
+        if ($user->roles == 'admin') {
+            $userId = $request->route('user');
 
+            DB::table('users')->where('id', $userId)->delete();
+        
+            return redirect()->back()->with('success', 'User deleted successfully.');
+        }
+        else{
+            return redirect()->back();
+        }
+    }
+    else{
+        return redirect()->back();
+    }
+
+    
+}
 }

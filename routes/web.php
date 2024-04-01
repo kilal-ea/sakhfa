@@ -16,7 +16,7 @@ use App\Http\Controllers\DashController;
 */
 
 Route::get('/',  [loginController::class, 'v'])->name('home');
-Route::get('/add/user', [AdminController::class, 'sv']);
+Route::get('/add/user', [AdminController::class, 'sv'])->name('add');;
 Route::post('/login', [loginController::class, 'login'])->name('r');
 Route::post('/added', [AdminController::class, 'singup'])->name('singup');
 Route::get('/dashboard', [DashController::class, 'dashboard'])->name('d');
@@ -24,3 +24,5 @@ Route::get('/logout', [loginController::class, 'logout'])->name('logout');
 Route::get('/profile', [loginController::class, 'profile'])->name('profile');
 Route::post('/profile/chnge', [loginController::class, 'changeprofile'])->name('pro');
 Route::get('/deleteuser', [AdminController::class, 'userdeletev'])->name('deleteuser');
+
+Route::delete('/users/{user}', [AdminController::class, 'destroy'])->name('delete');
