@@ -9,6 +9,7 @@ class AdminController extends Controller
 {
     public function sv(Request $req)
     {
+        return view('up');
         $user = Session::get('user');
         if (Session::has('user')) {
             if ($user->roles == 'admin') {

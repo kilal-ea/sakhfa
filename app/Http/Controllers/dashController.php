@@ -11,7 +11,6 @@ class DashController extends Controller
     {
         if (Session::has('user')) {
             $user = Session::get('user');
-
             switch ($user->roles) {
                 case 'admin':
                     return view('dashboard.adash', ['user' => $user]);

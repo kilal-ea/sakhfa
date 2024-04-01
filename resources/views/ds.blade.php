@@ -2,6 +2,6 @@
 
 @section('content')
     <div class="">
-    {{$user->id}}
+       {{$user->id}}
     </div>
 @endsection

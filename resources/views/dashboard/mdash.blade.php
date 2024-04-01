@@ -1,6 +1,6 @@
-@extends('dash')
+@extends('master')
 
-@section('admin')
+@section('content')
     <div class="">
             <p>magasener</p>
     </div>

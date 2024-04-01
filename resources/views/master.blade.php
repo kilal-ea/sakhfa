@@ -10,6 +10,7 @@
     <nav>
         <a href="{{ route('d') }}">dashboard</a> 
         <a href="{{ route('logout') }}">logout</a>
+        <a href="{{ route('profile') }}">profile</a>
     </nav>
     <main>
         @yield('content')
