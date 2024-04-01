@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\loginController;
-use App\Http\Controllers\dashbordController;
+use App\Http\Controllers\DashController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,5 +21,5 @@ Route::get('/', function () {
 Route::get('/add/user', [AdminController::class, 'sv']);
 Route::post('/login', [loginController::class, 'login'])->name('r');
 Route::post('/added', [AdminController::class, 'singup'])->name('singup');
-Route::get('/dashboard', [dashbordController::class, 'dashboard'])->name('d');
-Route::get('/ds', [dashbordController::class, 'ds'])->name('ds');
+Route::get('/dashboard', [DashController::class, 'dashboard'])->name('d');
+Route::get('/logout', [loginController::class, 'logout'])->name('logout');

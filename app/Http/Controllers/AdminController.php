@@ -4,12 +4,24 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-
+use Illuminate\Support\Facades\Session;
 class AdminController extends Controller
 {
     public function sv(Request $req)
     {
-        return view('up');
+        $user = Session::get('user');
+        if (Session::has('user')) {
+            if ($user->roles == 'admin') {
+                return view('up');
+            }
+            else{
+                return redirect()->back();
+            }
+        }
+        else{
+            return redirect()->back();
+        }
+        
     }
     public function singup(Request $req)
 {

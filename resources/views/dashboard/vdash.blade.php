@@ -2,6 +2,6 @@
 
 @section('content')
     <div class="">
-        ttt
+            <p>vondeur</p>
     </div>
 @endsection

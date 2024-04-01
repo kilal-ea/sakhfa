@@ -9,7 +9,7 @@
 <body>
     <nav>
         <a href="{{ route('d') }}">dashboard</a> 
-        <a href="{{ route('ds') }}">dashboard</a>
+        <a href="{{ route('logout') }}">logout</a>
     </nav>
     <main>
         @yield('content')
