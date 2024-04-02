@@ -1,22 +1,24 @@
 @extends('master')
 
 @section('content')
-    <div class="">
-    <a  href="{{ route('deleteuser') }}">deleteUser</a>
-    <a  href="{{ route('add') }}">addUser</a>
-        <a>acceptClient</a>
-        <a>showclint</a>
-        <a>showproduct</a>
+    <div style='display: flex'>
         <div>
-            <a>showusers</a>
-                <a>showstock</a>
+            <a href="{{ route('deleteuser') }}">Delete User</a><br>
+            <a href="{{ route('add') }}">Add User</a><br>
+            <a href="#">Accept Client</a><br>
+            <a href="#">Show Client</a><br>
+            <a href="#">Show Product</a><br>
+            <div>
+                <a href="#">Show Users</a><br>
+                <a href="#">Show Stock</a><br>
+            </div>
+            <a href="#">Add Product</a><br>
+            <a href="#">Show Users</a><br>
+            <a href="#">Show Bonv</a><br>
+            <a href="#">Show Sbontra</a><br>
         </div>
-        <a>addproduct</a>
-        <a>showusers</a>
-        <a>showbonv</a>
-        <a>showsbontra</a>
-    </div>
-    <div>
-        @yield('admin')
+        <div>
+            @yield('admin')
+        </div>
     </div>
 @endsection
