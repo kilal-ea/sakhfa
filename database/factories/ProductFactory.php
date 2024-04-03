@@ -23,7 +23,6 @@ class ProductFactory extends Factory
     {
         return [
             'name' => $this->faker->word,
-            'price' => $this->faker->randomFloat(2, 1, 1000),
             'category_id' => function () {
                 return \App\Models\Category::factory()->create()->id;
             },
